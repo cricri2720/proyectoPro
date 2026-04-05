@@ -25,7 +25,6 @@ public class MantenimientodeClientes extends javax.swing.JFrame {
     public MantenimientodeClientes() {
         initComponents();
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -155,7 +154,7 @@ public class MantenimientodeClientes extends javax.swing.JFrame {
 
     private void GuardarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarClienteActionPerformed
 
-// Validacion de datos.
+// Validacion de datos...
     try {
         // CREAR ARCHIVO SI NO EXISTE
         File archivo = new File("clientes.txt");
