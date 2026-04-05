@@ -154,7 +154,7 @@ public class MantenimientodeClientes extends javax.swing.JFrame {
 
     private void GuardarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarClienteActionPerformed
 
-// Validacion de datos...
+// Validacion de datos......
     try {
         // CREAR ARCHIVO SI NO EXISTE
         File archivo = new File("clientes.txt");
