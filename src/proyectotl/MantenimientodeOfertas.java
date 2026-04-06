@@ -137,10 +137,11 @@ public class MantenimientodeOfertas extends javax.swing.JFrame {
 
             if(datos[0].equals(txtMatricula.getText())){
 
-                // 👇 ID DE GAMA (depende de tu archivo, normalmente posición 5)
+                
+                //ID DE GAMA (depende de tu archivo, normalmente posición 5)
                 String idGama = datos[5];
 
-                //  BUSCA EN gama.txt
+                //  BUSCA EN gama.txt....
                 precioGama = obtenerPrecioGama(idGama);
 
                 JOptionPane.showMessageDialog(null,
