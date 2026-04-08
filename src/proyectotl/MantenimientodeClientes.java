@@ -23,8 +23,36 @@ public class MantenimientodeClientes extends javax.swing.JFrame {
      * Creates new form MantenimientodeClientes
      */
     public MantenimientodeClientes() {
-        initComponents();
-    } //cambio
+     
+    initComponents();
+     buscacliente.setEnabled(false);
+    GuardarCliente.setEnabled(false);
+    eliminarCliente.setEnabled(false);
+    
+  
+    }  
+    private boolean camposLlenos(){
+
+    return !txtCedula.getText().isEmpty() &&
+           !txtNombre.getText().isEmpty() &&
+           !txtApellidos.getText().isEmpty();
+}
+    
+    private void reset(){
+
+    txtCedula.setText("");
+    txtNombre.setText("");
+    txtApellidos.setText("");
+    txtDireccion.setText("");
+    txtTelefono.setText("");
+    txtEmail.setText("");
+
+    buscacliente.setEnabled(false);
+     GuardarCliente.setEnabled(false);
+    eliminarCliente.setEnabled(false);
+}
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -34,31 +62,26 @@ public class MantenimientodeClientes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        CedulaLabel = new javax.swing.JLabel();
         Nombrelabel = new javax.swing.JLabel();
-        Apellidoslabel = new javax.swing.JLabel();
-        Direccionlabel = new javax.swing.JLabel();
         Emaillabel = new javax.swing.JLabel();
         Telefonolabel = new javax.swing.JLabel();
         buscacliente = new javax.swing.JButton();
         GuardarCliente = new javax.swing.JButton();
         txtCedula = new javax.swing.JTextField();
-        txtNombre = new javax.swing.JTextField();
         txtApellidos = new javax.swing.JTextField();
         txtDireccion = new javax.swing.JTextField();
         txtEmail = new javax.swing.JTextField();
         txtTelefono = new javax.swing.JTextField();
+        Bg = new javax.swing.JPanel();
+        CedulaLabel = new javax.swing.JLabel();
+        Apellidoslabel = new javax.swing.JLabel();
+        Direccionlabel = new javax.swing.JLabel();
         eliminarCliente = new javax.swing.JButton();
+        txtNombre = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        CedulaLabel.setText("Cedula:");
-
         Nombrelabel.setText("Nombre:");
-
-        Apellidoslabel.setText("Apellidos:");
-
-        Direccionlabel.setText("Direccion:");
 
         Emaillabel.setText("Email:");
 
@@ -76,6 +99,15 @@ public class MantenimientodeClientes extends javax.swing.JFrame {
             }
         });
 
+        Bg.setForeground(new java.awt.Color(255, 255, 255));
+        Bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        CedulaLabel.setText("Cedula:");
+
+        Apellidoslabel.setText("Apellidos:");
+
+        Direccionlabel.setText("Direccion:");
+
         eliminarCliente.setText("Eliminar ");
         eliminarCliente.addActionListener(this::eliminarClienteActionPerformed);
 
@@ -84,44 +116,59 @@ public class MantenimientodeClientes extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(Telefonolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(Emaillabel, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(17, 17, 17)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(CedulaLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Apellidoslabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Direccionlabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Emaillabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(Telefonolabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Nombrelabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtCedula)
-                            .addComponent(txtNombre)
-                            .addComponent(txtApellidos)
-                            .addComponent(txtDireccion)
-                            .addComponent(txtEmail)
-                            .addComponent(txtTelefono, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
+                                .addComponent(Direccionlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(buscacliente)
-                        .addGap(32, 32, 32)
-                        .addComponent(GuardarCliente)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
-                        .addComponent(eliminarCliente)
-                        .addGap(38, 38, 38))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(GuardarCliente))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(CedulaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(Nombrelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(Apellidoslabel, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(74, 74, 74))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(137, 137, 137)
+                .addComponent(eliminarCliente)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(48, 48, 48)
+                .addGap(101, 101, 101)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CedulaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Nombrelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -137,16 +184,21 @@ public class MantenimientodeClientes extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Emaillabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Telefonolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(54, 54, 54)
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buscacliente)
-                    .addComponent(GuardarCliente)
-                    .addComponent(eliminarCliente))
-                .addContainerGap(88, Short.MAX_VALUE))
+                    .addComponent(GuardarCliente))
+                .addGap(18, 18, 18)
+                .addComponent(eliminarCliente)
+                .addContainerGap(66, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(Bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(90, 90, 90))
         );
 
         pack();
@@ -154,7 +206,12 @@ public class MantenimientodeClientes extends javax.swing.JFrame {
 
     private void GuardarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarClienteActionPerformed
 
-// Validacion de datos.........
+// Validacion de datos.
+   
+if(!camposLlenos()){
+    JOptionPane.showMessageDialog(null, "Complete los campos");
+    return;
+}
     try {
         // CREAR ARCHIVO SI NO EXISTE
         File archivo = new File("clientes.txt");
@@ -182,8 +239,10 @@ public class MantenimientodeClientes extends javax.swing.JFrame {
                         txtEmail.getText() + "," +
                         txtTelefono.getText();
                 encontrado = true;
+            
+          
             }
-
+             
             bw.write(linea);
             bw.newLine();
         }
@@ -211,44 +270,28 @@ public class MantenimientodeClientes extends javax.swing.JFrame {
     } catch (Exception e) {
         JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
     }
-
-        // TODO add your handling code here:
+reset();
     }//GEN-LAST:event_GuardarClienteActionPerformed
 
     private void buscaclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscaclienteActionPerformed
-        // TODO add your handling code here:
-
-    // VALIDAR QUE NO ESTÉ VACÍO
-    if(txtCedula.getText().isEmpty()){
-        JOptionPane.showMessageDialog(null, "Digite la cédula");
-        return;
-    }
 
     try {
-        File archivo = new File("clientes.txt");
-
-        // CREAR ARCHIVO SI NO EXISTE
-        if(!archivo.exists()){
-            archivo.createNewFile();
-        }
-
-        BufferedReader br = new BufferedReader(new FileReader(archivo));
+        BufferedReader br = new BufferedReader(new FileReader("clientes.txt"));
         String linea;
-        boolean encontrado = false;
+
+        boolean encontrado = false; 
 
         while((linea = br.readLine()) != null){
             String datos[] = linea.split(",");
 
             if(datos[0].equals(txtCedula.getText())){
-                
-                // CARGAR DATOS EN LOS CAMPOS
+
                 txtNombre.setText(datos[1]);
                 txtApellidos.setText(datos[2]);
                 txtDireccion.setText(datos[3]);
-                txtEmail.setText(datos[4]);
-                txtTelefono.setText(datos[5]);
+                txtTelefono.setText(datos[4]);
+                txtEmail.setText(datos[5]);
 
-                JOptionPane.showMessageDialog(null, "Cliente encontrado");
                 encontrado = true;
                 break;
             }
@@ -256,25 +299,47 @@ public class MantenimientodeClientes extends javax.swing.JFrame {
 
         br.close();
 
-        if(!encontrado){
-            JOptionPane.showMessageDialog(null, "Cliente no existe");
+        //  AQUÍ DECIDE EL SISTEMA
+        if(encontrado){
 
-            // LIMPIAR CAMPOS
+            JOptionPane.showMessageDialog(null, "Cliente encontrado");
+
+            GuardarCliente.setEnabled(true);
+            eliminarCliente.setEnabled(true);
+
+        } else {
+
+            JOptionPane.showMessageDialog(null, "Cliente no encontrado");
+
             txtNombre.setText("");
             txtApellidos.setText("");
             txtDireccion.setText("");
-            txtEmail.setText("");
             txtTelefono.setText("");
+            txtEmail.setText("");
+
+            GuardarCliente.setEnabled(true);
+            eliminarCliente.setEnabled(false);
         }
 
     } catch (Exception e) {
-        JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
+        JOptionPane.showMessageDialog(null, "Error");
     }
- 
+
     }//GEN-LAST:event_buscaclienteActionPerformed
 
     private void txtCedulaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedulaKeyReleased
+    
+        
+        if(txtCedula.getText().trim().isEmpty()){
+        buscacliente.setEnabled(false);
+    } else {
+         buscacliente.setEnabled(true);
+    }
 
+    // bloquear los otros mientras escribe
+     GuardarCliente.setEnabled(false);
+    eliminarCliente.setEnabled(false); 
+  
     try {
         File archivo = new File("clientes.txt");
 
@@ -290,25 +355,25 @@ public class MantenimientodeClientes extends javax.swing.JFrame {
         while((linea = br.readLine()) != null){
             String datos[] = linea.split(",");
 
-            if(datos[0].equals(txtCedula.getText())){
+           // if(datos[0].equals(txtCedula.getText())){
                 // CARGAR DATOS
-                txtNombre.setText(datos[1]);
-                txtApellidos.setText(datos[2]);
-                txtDireccion.setText(datos[3]);
-                txtEmail.setText(datos[4]);
-                txtTelefono.setText(datos[5]);
+                //txtNombre.setText(datos[1]);
+                //txtApellidos.setText(datos[2]);
+                //txtDireccion.setText(datos[3]);
+               // txtEmail.setText(datos[4]);
+                //txtTelefono.setText(datos[5]);
 
                
                 encontrado = true;
                 break;
-            }
+           // }
         }
 
         br.close();
 
         if(!encontrado){
             
-            // LIMPIAR CAMPOS (IMPORTANTE)
+            // LIMPIAR CAMPOS 
             txtNombre.setText("");
             txtApellidos.setText("");
             txtDireccion.setText("");
@@ -346,7 +411,7 @@ public class MantenimientodeClientes extends javax.swing.JFrame {
 
             if(datos[0].equals(txtCedula.getText())){
                 eliminado = true;
-                continue; // 🔥 NO lo escribe (lo elimina)
+                continue;  //  NO lo escribe (lo elimina)
             }
 
             bw.write(linea);
@@ -360,7 +425,7 @@ public class MantenimientodeClientes extends javax.swing.JFrame {
         temp.renameTo(archivo);
 
         if(eliminado){
-            JOptionPane.showMessageDialog(null, "Cliente eliminado");
+            JOptionPane.showMessageDialog(null, "Cliente eliminado correctamente");
 
             // LIMPIAR CAMPOS
             txtCedula.setText("");
@@ -376,7 +441,7 @@ public class MantenimientodeClientes extends javax.swing.JFrame {
     } catch (Exception e) {
         JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
     }
-
+reset();
         // TODO add your handling code here:
     }//GEN-LAST:event_eliminarClienteActionPerformed
 
@@ -407,6 +472,7 @@ public class MantenimientodeClientes extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Apellidoslabel;
+    private javax.swing.JPanel Bg;
     private javax.swing.JLabel CedulaLabel;
     private javax.swing.JLabel Direccionlabel;
     private javax.swing.JLabel Emaillabel;
